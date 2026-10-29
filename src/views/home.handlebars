@@ -1,0 +1,35 @@
+<div class="app">
+  {{> cabecera titulo="Chat Grupal"}}
+
+  <form id="formChat" class="layout" autocomplete="off">
+    <aside class="panel">
+      <h2>Tu perfil</h2>
+
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" maxlength="40" placeholder="¿Cómo te llamas?" required>
+
+      <label for="publicidad">Publicidad</label>
+      <textarea id="publicidad" maxlength="120" rows="3" placeholder="Anuncia algo (opcional)"></textarea>
+      <p class="ayuda">La publicidad se envía junto con cada mensaje.</p>
+    </aside>
+
+    <section class="chat">
+      <div id="mensajes" class="mensajes">
+        {{#each mensajes}}
+          {{> mensaje}}
+        {{else}}
+          <div class="vacio" id="vacio">
+            <span>👋</span>
+            <p>Aún no hay mensajes. ¡Escribe el primero!</p>
+          </div>
+        {{/each}}
+      </div>
+
+      <div class="barra">
+        <input type="text" id="mensaje" maxlength="500" placeholder="Ingrese el mensaje" required>
+        <button type="submit" aria-label="Enviar">Enviar ➤</button>
+      </div>
+      <p id="error" class="error"></p>
+    </section>
+  </form>
+</div>

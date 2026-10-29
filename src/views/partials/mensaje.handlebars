@@ -1,0 +1,16 @@
+<article class="mensaje" data-nombre="{{nombre}}">
+  <div class="avatar" style="background: {{colorAvatar nombre}}">{{iniciales nombre}}</div>
+  <div class="burbuja">
+    <div class="mensaje-cabecera">
+      <span class="autor" style="color: {{colorAvatar nombre}}">{{nombre}}</span>
+      <time class="hora">{{hora}}</time>
+    </div>
+    {{#if publicidad}}
+      <div class="publicidad">
+        <span class="etiqueta">Publicidad</span>
+        {{publicidad}}
+      </div>
+    {{/if}}
+    <p class="texto">{{mensaje}}</p>
+  </div>
+</article>
